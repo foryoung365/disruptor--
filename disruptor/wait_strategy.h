@@ -26,7 +26,7 @@
 #ifndef DISRUPTOR_WAITSTRATEGY_H_  // NOLINT
 #define DISRUPTOR_WAITSTRATEGY_H_  // NOLINT
 
-#include <sys/time.h>
+#include <time.h>
 
 #include <chrono>
 #include <thread>
@@ -181,7 +181,7 @@ class YieldingStrategy {
                   const std::vector<Sequence*>& dependents,
                   const std::atomic<bool>& alerted) {
     int64_t available_sequence = kInitialCursorValue;
-    int counter = S;
+	int64_t counter = S;
 
     const auto min_sequence = buildMinSequenceFunction(cursor, dependents);
 

@@ -34,6 +34,7 @@
 #define DISRUPTOR_SEQUENCE_H_  // NOLINT
 
 #include <atomic>
+#include <vector>
 
 #include "disruptor/utils.h"
 

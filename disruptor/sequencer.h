@@ -54,8 +54,8 @@ class Sequencer {
   //
   // @param sequences_to_track this barrier will track.
   // @return the barrier gated as required.
-  SequenceBarrier<W> NewBarrier(const std::vector<Sequence*>& dependents) {
-    return SequenceBarrier<W>(cursor_, dependents);
+  SequenceBarrier<W>* NewBarrier(const std::vector<Sequence*>& dependents) {
+    return new SequenceBarrier<W>(cursor_, dependents);
   }
 
   // Get the value of the cursor indicating the published sequence.
